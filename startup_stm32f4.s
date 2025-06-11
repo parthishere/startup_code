@@ -3,6 +3,15 @@
 .fpu fpv4-sp-d16
 .thumb
 
+.section .text.copy_data_seg
+.type copy_data_seg, %function
+copy_data_seg:
+    b copy_data_seg;
+
+.section .text.zero_bss_seg
+.type zero_bss_seg, %function
+zero_bss_seg:
+    b zero_bss_seg;
 
 .global isr_reset
 .section .text.isr_reset 
