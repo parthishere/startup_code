@@ -4,10 +4,10 @@ LDFLAGS :=  --specs=nosys.specs -nostartfiles -T stm32f4.ld
 
 TARGET := main.elf
 
-# CFILES := main.c startup_stm32f4.c
+CFILES := main.c startup_stm32f4_c.c
 
-CFILES := main.c 
-ASFILES := startup_stm32f4.s
+# CFILES := main.c 
+# ASFILES := startup_stm32f4.s
 
 OBJFILES := $(CFILES:.c=.o) $(ASFILES:.s=.o) 
 

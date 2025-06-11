@@ -2,6 +2,20 @@ extern int main(void);
 
 // symbol defined in linker script
 extern unsigned int _stack;
+extern unsigned int _sdata;
+extern unsigned int _edata;
+extern unsigned int _sbss;
+extern unsigned int _ebss;
+
+
+void zero_bss_seg(void){
+    while(_sbss < _ebss){
+        *sbss = 0;
+        _sbss++;
+    }
+}
+
+void copy_data_seg(void)
 
 
 void isr_reset(void) {

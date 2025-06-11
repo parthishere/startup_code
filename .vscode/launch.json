@@ -11,6 +11,7 @@
             "executable": "${workspaceFolder}/main.elf",
             "request": "launch",
             "type": "cortex-debug",
+            // "runToEntryPoint": "main",
             "breakAfterReset": true,
             "device": "stm32f4",
             "servertype": "openocd",
