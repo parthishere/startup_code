@@ -35,4 +35,4 @@ clean:
 
 .PHONY: inspect
 inspect:
-	@arm-none-eabi-objdump -d $(TARGET)
+	@arm-none-eabi-objdump -D $(TARGET)

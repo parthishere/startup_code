@@ -17,13 +17,21 @@ SECTIONS
         PROVIDE(_etext = .);
     } > flash
 
+    .init_array : ALIGN(4)
+    {
+        __init_array_start = .;
+        KEEP(*(.init_array*))
+        __init_array_end = .;
+        . = ALIGN(4);
+    } > flash
+
       /* Initial (constant) values for data is placed in flash after the program code */
      _idata = LOADADDR(.data);
 
     .data : ALIGN(4){
         PROVIDE(_sdata = .);
         *(.data*)
-        = ALIGN(4);
+        . = ALIGN(4);
         PROVIDE(_edata = .);
     } > ram AT > flash
 
