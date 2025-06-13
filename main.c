@@ -1,5 +1,9 @@
+#include <string.h>
+
 int global_variable = 10;
 int uninit_global_variable; // Expect 0 according to C standard
+int to[100];
+int from[100];
 int main(void) {
     int local_variable = 20;
     static int static_local_variable = 30;
@@ -8,6 +12,7 @@ int main(void) {
     sum = global_variable + uninit_global_variable +
           local_variable + static_local_variable +
           uninit_static_local_variable;
+    memcpy(to, from, sizeof(from));
     if (sum == 60) {
         while (1) { }
     } else {
